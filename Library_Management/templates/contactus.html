@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!--icon font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--browser tab icon-->
+    <link rel = "icon" href ="{%static 'images/icon.jpg' %}" type = "image/x-icon">
+    <link rel= "stylesheet" type="text/css" href="style/style.css">
+    <!--css connection-->
+    <link rel= "stylesheet" href="{% static 'css/contactstyle.css' %}">
+    <title>Libro - Library Management</title>
+</head>
+<body>
+<style>
+.body{
+  background-image: url("{% static 'images/cov.jpg' %}");
+  background-color: aliceblue;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>
+
+<h2 id="heading" style="color: white;"><b>Libro</b></h2>
+
+<!--navbar-->
+  <ul style="color: aliceblue;">
+    <li><a  href="{% url 'home' %}"><b>Home</b></a></li>
+    <li><a href="#"><b>Signin</b></a></li>
+    <li><a href="{% url 'signup' %}"><b>Signup</b></a></li>
+    <li><a href="#"><b>Contact</b></a></li>
+  </ul>
+<!--nav bar end-->
+
+<img class="img-fluid" src="{%static 'images/contact_cover.jpg' %}" alt="img" width="1380" height="30"><br><br>
+<!--contact details-->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 col-6">
+      <h1 style="color: crimson;">CONTACT US</h1><br>
+    </div>
+  </div>
+    <p><i style="font-size:24px" class="fa">&#xf19c;</i>&nbsp Libro - Library Management<br>
+    
+      <i class="material-icons">&#xe158;</i>&nbsp  info@librolibrary.com<br>
+      <i style='font-size:24px' class='fas'>&#xf2a0;</i>&nbsp +91 234 567 88<br>
+      <i style='font-size:24px' class='fas'>&#xf2a0;</i>&nbsp +91 234 567 89</p> 
+  </div>
+</div>
+<!--end contact details-->
+<!--contact form-->
+<div class="container">
+  <form action="/action_page.php">
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+    <label for="country">Country</label>
+    <select id="country" name="country">
+      <option value="australia">Australia</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+    </select>
+
+    <label for="subject">Subject</label>
+    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+
+<!-- Footer -->
+<div class="footer_cnt">
+  <footer class="page-footer font-small blue-grey lighten-5">
+    <div class="container text-center text-md-left mt-5">
+      <div class="row mt-4 dark-grey-text">
+        <div class="col-md-4 col-lg-4 col-xl-4 mb-4">
+          <h6 class="text-uppercase font-weight-bold" style="color: crimson;">ABOUT US</h6>
+          <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+          <p style="text-align: justify;">Libro-Library Management deals with process of developing, managing, and maintaining a library. Manage your personal library & virtual bookshelf easily with book organizer, the the ultimate website for students,book collectors or any book readers! Search your personal catalogue using authors,title books or any terms.Libro-Library Management simple and useful website.</p>
+        </div>
+        <!-- Grid column1 -->
+        
+        <div class="col-md-4 col-lg-2 col-xl-2 mx-auto mb-4">
+  
+          <!-- Links 2-->
+          <h6 class="text-uppercase font-weight-bold" style="color: crimson;">Category</h6>
+          <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+          <p>
+            <a class="dark-grey-text text-white" href="#!">Edu & Reference</a>
+          </p>
+          <p>
+            <a class="dark-grey-text text-white" href="#!">Sci-Fiction & Fantacy</a>
+          </p>
+          <p>
+            <a class="dark-grey-text text-white" href="#!">Biography</a>
+          </p>
+          <p>
+            <a class="dark-grey-text text-white" href="#!">Computers & Tech</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+  
+          <!-- Links -->
+          <h6 class="text-uppercase font-weight-bold" style="color: crimson;">Contact</h6>
+          <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+          <p>
+            <i class="fas fa-home mr-3"></i> Libro - Library Management</p>
+          <p>
+            <i class="fas fa-envelope mr-3"></i> info@librolibrary.com</p>
+          <p>
+            <i class="fas fa-phone mr-3"></i> +91 234 567 88</p>
+          <p>
+            <i class="fas fa-print mr-3"></i> +91 234 567 89</p>
+        </div>
+      </div>
+  
+    </div>
+    <!-- Footer Links -->
+  
+    <!-- Copyright -->
+    <div class="footer-copyright text-center text-white-50 py-3">© 2021 Copyright:
+      <a  class="text-white" href="http://127.0.0.1:8000/"> LibroLibrary.com</a>
+    </div>
+    <!-- Copyright end-->
+  </footer>
+  <!-- Footer end -->
+  </div>
+
+</body>
+</html>

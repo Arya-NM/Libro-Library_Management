@@ -1,0 +1,157 @@
+Library Management System
+-------------------------
+
+--Module
+     1)Admin
+     2)Librarian
+     3)Student
+
+1)Admin
+.......
+    * Manage Books
+
+	>add new book
+		- Book Name
+		- Book Id
+		- Author Name
+		- Category(eg:-education,story)
+		- Language
+		- Quantity
+	>Update book
+		- Book Name
+		- Book Id
+		- Author Name
+		- Category
+		- Language
+		- Quantity
+	>Delete book
+		-Id
+	>view book
+		- View available books
+
+
+    * Manage Librarian(user)
+	 
+	>Add new librarian
+		- Name
+		- Librarian Id
+		- Contact number
+		- Address
+		- Age
+	>Update librarian details
+		- Name
+		- Id
+		- Contact Number
+		- Address
+	>Delete 
+		-Id
+	>View librarian
+		- View available user details
+
+
+   * Manage Students
+	>View Student details
+		- Student Name
+		- Department
+		- Roll Number
+		- Contact number
+		- Book Name
+		- Book id
+		- Category
+		- issue date
+		- return date
+
+  * Category
+	>add Category
+		-book category name
+		-author name
+		-shell number
+
+
+   *login/logout
+	>Login
+		- Username
+		- Password
+
+
+2) Librarian
+  
+    *Manage Student
+	>Add student
+		- Student id
+		- Student Name
+		- Roll Number
+		- Department
+		- Contact number
+		
+	>Update Student
+		- Student Id
+		- Student Name
+		- Roll Number
+		- Department
+		- Contact Number
+	>Delete Student
+		-Student id
+	>view Student 
+		-View student details
+
+    * Manage Library 
+	>Student Details
+		- Student Id
+		- Student Name
+		- Roll Number
+		- Department
+		- Book Name
+		- Book Id
+		- Author Name
+		- Category
+		- Language
+		- Issue Date
+		- End Date
+   * View book
+		-view available books
+
+   * Category
+	>add Category
+		-book category name
+		-author name
+		-shell number
+
+    * Manage books
+	>add new book
+		- Book Name
+		- Book Id
+		- Author Name
+		- Category(eg:-education,story)
+		- Language
+		- Quantity
+	>Update book
+		- Book Name
+		- Book Id
+		- Author Name
+		- Category
+		- Language
+		- Quantity
+	>Delete book
+		-Id
+	>view book
+		- View available books
+   * login/logout
+
+
+3)student
+	>View book
+		- Book ID
+		- Book Name
+		- Author Name
+		- Category
+		- Language
+		- Quantity
+		
+
+
+
+		
+
+
+ 
