@@ -21,21 +21,12 @@
     <title>Libro - Library Management</title>
 </head>
 <body>
-<style>
-.body{
-  background-image: url("{% static 'images/cov.jpg' %}");
-  background-color: aliceblue;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-</style>
-
 <h2 id="heading" style="color: white;"><b>Libro</b></h2>
 
 <!--navbar-->
   <ul style="color: aliceblue;">
     <li><a  href="{% url 'home' %}"><b>Home</b></a></li>
-    <li><a href="#"><b>Signin</b></a></li>
+    <li><a href="{% url 'login' %}"><b>Signin</b></a></li>
     <li><a href="{% url 'signup' %}"><b>Signup</b></a></li>
     <li><a href="#"><b>Contact</b></a></li>
   </ul>
@@ -45,40 +36,55 @@
 <!--contact details-->
 <div class="container">
   <div class="row">
-    <div class="col-lg-12 col-6">
-      <h1 style="color: crimson;">CONTACT US</h1><br>
-    </div>
-  </div>
-    <p><i style="font-size:24px" class="fa">&#xf19c;</i>&nbsp Libro - Library Management<br>
+    <div class="col-lg-6">
+      <h2 style="color: crimson;">CONTACT US</h2><br><br>
+
+    <p><i style="font-size:24px" class="fa">&#xf19c;</i>&nbsp Libro Enqiry - Library Management<br>
     
-      <i class="material-icons">&#xe158;</i>&nbsp  info@librolibrary.com<br>
-      <i style='font-size:24px' class='fas'>&#xf2a0;</i>&nbsp +91 234 567 88<br>
-      <i style='font-size:24px' class='fas'>&#xf2a0;</i>&nbsp +91 234 567 89</p> 
+      <i class="material-icons">&#xe158;</i>&nbsp  searchbook@librolibrary.com<br>
+      <i style='font-size:24px' class='fas'>&#xf2a0;</i>&nbsp +91 228 767 56<br>
+      <i style='font-size:24px' class='fas'>&#xf2a0;</i>&nbsp +91 8157 567 96</p> 
   </div>
+
+  <div class="col-lg-6">
+    <h1 style="color: crimson;"></h1><br><br><br><br>
+
+  <p><i style="font-size:24px" class="fa">&#xf19c;</i>&nbsp Libro - Library Management<br>
+  
+    <i class="material-icons">&#xe158;</i>&nbsp  info@librolibrary.com<br>
+    <i style='font-size:24px' class='fas'>&#xf2a0;</i>&nbsp +91 234 567 88<br>
+    <i style='font-size:24px' class='fas'>&#xf2a0;</i>&nbsp +91 234 567 89</p> 
+</div>
+</div>
 </div>
 <!--end contact details-->
+
+
 <!--contact form-->
 <div class="container">
-  <form action="/action_page.php">
-    <label for="fname">First Name</label>
-    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+  <div class="row">
+  <div class="col-md-8 offset-md-2  " style="background-color: rgb(247, 225, 232); margin-top: 20px; padding-top: 50px; ">
+  <h1 style="color:crimson; font-size: 200%; text-align: center;">CONTACT FORM</h1>
+  <form action="/action" style="border:1px solid #ccc">
+  
+      <label for="username"><b>Full Name</b></label>
+      <input type="text" placeholder="Enter Username" name="username" required>
+  
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" required>
+  
+      <label for="username"><b>Message</b></label><br>
+      <textarea id="subject" name="subject" placeholder="Write something.." style="height:100px; width: 100%;background-color: #f1f1f1; border-color: #f1f1f1; " ></textarea>
+      <div class="clearfix">
 
-    <label for="lname">Last Name</label>
-    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-
-    <label for="country">Country</label>
-    <select id="country" name="country">
-      <option value="australia">Australia</option>
-      <option value="canada">Canada</option>
-      <option value="usa">USA</option>
-    </select>
-
-    <label for="subject">Subject</label>
-    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-
-    <input type="submit" value="Submit">
+        <button type="submit" class="signupbtn">Submit</button>
+      </div>
+    </div>
   </form>
-</div>
+  </div>
+  </div>
+
+
 
 
 <!-- Footer -->
@@ -118,13 +124,13 @@
           <h6 class="text-uppercase font-weight-bold" style="color: crimson;">Contact</h6>
           <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
           <p>
-            <i class="fas fa-home mr-3"></i> Libro - Library Management</p>
+            <i class=""></i>Libro - Library Management</p>
           <p>
-            <i class="fas fa-envelope mr-3"></i> info@librolibrary.com</p>
+            <i class=""></i>info@librolibrary.com</p>
           <p>
-            <i class="fas fa-phone mr-3"></i> +91 234 567 88</p>
+            <i class=""></i> +91 234 567 88</p>
           <p>
-            <i class="fas fa-print mr-3"></i> +91 234 567 89</p>
+            <i class=""></i> +91 234 567 89</p>
         </div>
       </div>
   

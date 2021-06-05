@@ -24,7 +24,7 @@
 <!--navbar-->
   <ul style="color: aliceblue;">
     <li><a  href="{% url 'home' %}"><b>Home</b></a></li>
-    <li><a href="#"><b>Signin</b></a></li>
+    <li><a href="{% url 'login' %}"><b>Signin</b></a></li>
     <li><a href="#"><b>Signup</b></a></li>
     <li><a href="{% url 'contact' %}"><b>Contact</b></a></li>
   </ul>
@@ -33,8 +33,9 @@
 <!--form start-->
 <div class="container">
 <div class=" col-12" style="background-color: rgb(247, 225, 232); margin-top: 20px; padding-top: 50px;" >
-<h1 style="color:crimson; font-size: 300%; text-align: center;">SIGN UP</h1>
-<form action="/action" style="border:1px solid #ccc">
+<h1 style="color:crimson; font-size: 250%; text-align: center;">SIGN UP</h1>
+<form action="\accounts\signup\" method="POST" style="border:1px solid #ccc">
+  {% csrf_token %}
 
     <label for="username"><b>Username</b></label>
     <input type="text" placeholder="Enter Username" name="username" required>
@@ -47,12 +48,6 @@
 
     <label for="psw-repeat"><b>Repeat Password</b></label>
     <input type="password" placeholder="Repeat Password" name="psw-repeat" required><br>
-
-    <label for="psw-repeat"><b>Repeat Password:-</b></label>
-    <input type="radio" id="male" name="gender" value="male">
-    <label for="male">Librarian</label>
-    <input type="radio" id="female" name="gender" value="female">
-    <label for="female">Student</label><br>
 
     <div class="clearfix">
       <button type="button" class="cancelbtn">Cancel</button>

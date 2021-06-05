@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+<head>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!--browser tab icon-->
+    <link rel = "icon" href ="{%static 'images/icon.jpg' %}" type = "image/x-icon">
+    <link rel= "stylesheet" type="text/css" href="login/login.css">
+    <!--css connection-->
+    <link rel= "stylesheet" href="{% static 'css/login.css' %}">
+    <title>Libro - Library Management</title>
+</head>
+<body>
+<h2 id="heading1" style="color: white;"><b>Libro</b></h2>
+
+<!--navbar-->
+  <ul style="color: aliceblue;">
+    <li><a  href="{% url 'home' %}"><b>Home</b></a></li>
+    <li><a href="#"><b>Signin</b></a></li>
+    <li><a href="#"><b>Signup</b></a></li>
+    <li><a href="{% url 'contact' %}"><b>Contact</b></a></li>
+  </ul><br><br><br>
+<!--nav bar end-->
+
+<div class="container">
+<div class="row">
+<div class="col-lg-6" style="background-color: rgb(248, 233, 236)"><br>
+  <h3 style="text-align:center;color: crimson;">Librarian Login</h3><br>
+  <img class="img-fluid rounded-circle center" src="{%static 'images/lib.png' %}" alt="img"  width="50" id="img1"><br><br>
+  <form action="/action_page.php" method="post">
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+  
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+          
+      <button type="submit">Login</button>
+    </div>
+  
+    <div class="container" style="background-color:#f1f1f1">
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+</div>
+<div class="col-lg-6" style="background-color: rgb(255, 225, 230)"><br>
+  <h3 style="text-align: center;color: crimson;">Student Login</h3><br>
+  <img class="img-fluid rounded-circle center" src="{%static 'images/student.png' %}" alt="img"  width="50" id="img1"><br><br>
+  <form action="/action_page.php" method="post">
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+  
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+          
+      <button type="submit">Login</button>
+    </div>
+  
+    <div class="container" style="background-color:#f1f1f1">
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+</div>
+</div>
+</div>
+</body>
+</html>
