@@ -1,0 +1,63 @@
+body {
+    background-color: aliceblue;
+}
+
+#heading{
+    position: absolute;
+    left: 81%;
+    top:1%;
+  }
+
+
+li {
+    float: left;
+  }
+  
+
+li a:hover:not(.active) {
+    background-color: rgb(248, 182, 193);
+  }
+
+#nav{
+    background-color: crimson !important;
+}
+body {
+    font-family: Arial;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  form.example input[type=text] {
+    padding: 5px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+  }
+  
+  form.example button {
+    float: left;
+    width: 20%;
+    padding: 17px;
+    background: #ee7a97;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+    height: 20%;
+  }
+  
+  form.example button:hover {
+    background: #d8607a;
+
+  }
+  
+  form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+  }

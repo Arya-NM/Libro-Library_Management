@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!--browser tab icon-->
+  <link rel = "icon" href ="{%static 'images/icon.jpg' %}" type = "image/x-icon">
+  <!--css connection-->
+  <link rel= "stylesheet" href="{% static 'css/viewbook.css' %}">
+  <title>Libro - Library Management</title>
+</head>
+
+<body>
+  <!--navbar start-->
+<div class="container-flex">
+    <nav class="navbar navbar-expand-lg navbar-light bg-danger fixed-top  scrolled" id="nav">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'homepg' %}" style="color: aliceblue;"><b>Home</b> <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'contact' %}"  style="color: aliceblue;"><b>Contact</b></a>
+                  </li>
+                  
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" style="color: aliceblue;">
+                     <b>Book</b> 
+                    </a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="{% url 'addbooks' %}"><b>Add Book</b></a>
+                      <a class="dropdown-item" href="#"><b>View Book</b></a>
+                    </div>
+                  </li>
+                  
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" style="color: aliceblue;">
+                      <b>Issue Book</b>
+                    </a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="{% url 'issuebooks' %}"><b>Issue Book </b></a>
+                      <a class="dropdown-item" href="{% url 'viewissuebooks' %}"><b>View Issue Book Details</b></a>
+                    </div>
+                  </li>
+  
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" style="color: aliceblue;">
+                      <b>Student</b>
+                    </a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="{% url 'addstudents' %}"><b>Add New Student</b></a>
+                      <a class="dropdown-item" href="#"><b>View Student Details</b></a>
+                    </div>
+                  </li>
+  
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login' %}" style="color: aliceblue;"><b>Logout</b></a>
+                  </li>
+                </ul>
+            </div>
+            <a class="navbar-brand ml-auto" href="#" style="color: white;"><b>Libro</b></a>
+    </nav>
+  </div><br><br><br><br><br>
+  <!--navbar end-->
+
+
+<!--view book seaction start-->
+<section id="signup">
+  <div class="container justify-content-center">
+      <div class="row">
+          <div class="col-lg-12">
+              <table class="table table-striped table-light">
+                  <thead>
+                    <tr>
+                      <th scope="col">Id</th>
+                      <th scope="col">Book Name</th>
+                      <th scope="col">Author Name</th>
+                      <th scope="col">isbn</th>
+                      <th scope="col">Status</th>
+                      <th scope="col">Category</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                      {% for i in books %}
+                    <tr>
+                      <th scope="row">{{i.id}}</th>
+                      <!--<td><img src="{{i.imgs.url}}" width="120"/></td>-->
+                      <td>{{i.Book_Name}}</td>
+                      <td>{{i.Author_Name}}</td>
+                      <td>{{i.isbn}}</td>
+                      <td>{{i.Status}}</td>
+                      <td>{{i.Category}}</td>
+                      <td>
+                        
+                        <a href="{% url 'updatedata' i.id %}" class="btn btn-warning btn-sm">Edit</a>
+                        <form action="{% url 'deletedata' i.id %}" method="POST" class="d-inline">
+                            {% csrf_token %}
+                            <input type="submit" class="btn btn-danger" value="Delete">
+            
+                        </form>
+
+                         </td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+                  
+              </div>
+              </div>
+              </div>
+              </section>
+
+
+<script src="https://kit.fontawesome.com/711d09c28b.js" crossorigin="anonymous"></script>
+</body>
+</html>

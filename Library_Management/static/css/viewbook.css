@@ -1,0 +1,38 @@
+body {
+    background-color: rgb(248, 233, 236);
+}
+
+#heading{
+    position: absolute;
+    left: 81%;
+    top:1%;
+  }
+
+
+li {
+    float: left;
+  }
+  
+
+li a:hover:not(.active) {
+    background-color: rgb(248, 182, 193);
+  }
+
+#nav{
+    background-color: crimson !important;
+}
+
+#img1{
+
+display: block;
+margin-left: auto;
+margin-right: auto;
+width: 10%;
+border-radius: 50%;
+}
+#search{
+  position: absolute;
+  left: 60%;
+  top:22%;
+  width: 30%;
+}

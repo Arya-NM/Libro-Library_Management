@@ -19,6 +19,27 @@
     <title>Libro - Library Management</title>
 </head>
 <body>
+
+  <script>
+    $(document).ready(function(){
+            $("#passwd2").blur(function(){
+              func();
+            });
+        });
+  function func(){
+    const pass1=document.getElementById("passwd1").value;
+    const pass2=document.getElementById("passwd2").value;
+    if (pass1 != pass2){
+      alert("password and confirm password should be same");
+    }
+    else{
+      if (pass1.length <= 5){
+        alert("password should have minimum 6 elements")
+      }
+    }
+  }
+</script>
+
 <h2 id="heading" style="color: white;"><b>Libro</b></h2>
 
 <!--navbar-->
@@ -44,13 +65,13 @@
     <input type="text" placeholder="Enter Email" name="email" required>
 
     <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
+    <input type="password" placeholder="Enter Password" name="psw" required id="passwd1">
 
     <label for="psw-repeat"><b>Repeat Password</b></label>
-    <input type="password" placeholder="Repeat Password" name="psw-repeat" required><br>
+    <input type="password" placeholder="Repeat Password" name="psw-repeat" required id="passwd2"><br>
 
     <div class="clearfix">
-      <button type="button" class="cancelbtn">Cancel</button>
+      
       <button type="submit" class="signupbtn">Sign Up</button>
     </div>
   </div>
@@ -58,6 +79,9 @@
 </div>
 </div>
 <!--form end-->
+
+
+
 
 
 <!-- Footer -->

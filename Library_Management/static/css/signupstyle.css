@@ -62,6 +62,7 @@ button {
   cursor: pointer;
   width: 100%;
   opacity: 0.9;
+  
 }
 
 button:hover {
@@ -69,15 +70,12 @@ button:hover {
 }
 
 /* Extra styles for the cancel button */
-.cancelbtn{
-  padding: 14px 20px;
-  background-color: #dd4c60;
-}
+
 
 /* Float cancel and signup buttons and add an equal width */
-.cancelbtn, .signupbtn {
+.signupbtn {
   float: left;
-  width: 50%;
+  width: 100%;
 }
 
 /* Add padding to container elements */
@@ -94,7 +92,7 @@ button:hover {
 
 /* Change styles for cancel button and signup button on extra small screens */
 @media screen and (max-width: 300px) {
-  .cancelbtn, .signupbtn {
+.signupbtn {
      width: 100%;
   }
 }
