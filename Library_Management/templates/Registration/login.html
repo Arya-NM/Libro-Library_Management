@@ -62,7 +62,7 @@ li a:hover:not(.active) {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 40%;
+    width: 10%;
     border-radius: 50%;
   
 }
@@ -127,17 +127,19 @@ span.psw {
 <h2 id="heading1" style="color: white;"><b>Libro</b></h2>
 
 <!--navbar-->
-  <ul style="color: aliceblue;">
-    <li><a  href="{% url 'home' %}"><b>Home</b></a></li>
-    <li><a href="#"><b>Signin</b></a></li>
-    <li><a href="{% url 'signup' %}"><b>Signup</b></a></li>
-    <li><a href="{% url 'contact' %}"><b>Contact</b></a></li>
-  </ul><br><br><br>
+<ul style="color: aliceblue;">
+  <li><a  href="{% url 'home' %}"><b>Home</b></a></li>
+  <li><a href="{% url 'login' %}"><b>Librarian Signin</b></a></li>
+  <li><a href="{% url 'signup' %}"><b>Librarian Signup</b></a></li>
+  <li><a href="{% url 'stu_login' %}"><b>Student Signin</b></a></li>
+  <li><a href="{% url 'stu_signup' %}"><b>Student Signup</b></a></li>
+  <li><a href="{% url 'contact' %}"><b>Contact</b></a></li>
+</ul><br><br><br>
 <!--nav bar end-->
 
 <div class="container">
 <div class="row">
-<div class="col-lg-6" style="background-color: rgb(248, 233, 236)"><br>
+<div class="col-lg-12" style="background-color: rgb(248, 233, 236)"><br>
   <h3 style="text-align:center;color: crimson;">Librarian Login</h3><br>
   <img class="img-fluid rounded-circle center" src="{%static 'images/lib.png' %}" alt="img"  width="50" id="img1"><br><br>
   <form action="/accounts/login/" method="POST">

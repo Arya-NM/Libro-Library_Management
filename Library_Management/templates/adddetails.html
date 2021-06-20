@@ -138,20 +138,20 @@ span.psw {
                 <li class="nav-item active">
                   <a class="nav-link" href="{% url 'stuhomepg' %}" style="color: aliceblue;"><b>Home</b> <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
+                <!--<li class="nav-item">
                   <a class="nav-link" href="{% url 'contact' %}"  style="color: aliceblue;"><b>Contact</b></a>
-                </li>
+                </li>-->
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'stuviewissuebooks' %}"  style="color: aliceblue;"><b>View Issue Book</b></a>
+                    <a class="nav-link" href="{% url 'viewbookes' %}"  style="color: aliceblue;"><b>View Issue Book</b></a>
                   </li>
                 <li class="nav-item">
                     <a class="nav-link" href=""  style="color: aliceblue;"><b>Add Your Details</b></a>
                   </li>
                 
-                <li class="nav-item">
+                <!--<li class="nav-item">
                     <a class="nav-link" href="{% url 'contact' %}"  style="color: aliceblue;"><b>View Profile</b></a>
-                  </li>
+                  </li>-->
                   <li class="nav-item">
                     <a class="nav-link" href="{% url 'login' %}"  style="color: aliceblue;"><b>Logout</b></a>
                   </li>
@@ -168,19 +168,17 @@ span.psw {
     <div class="col-lg-12" style="background-color: rgb(248, 233, 236)"><br>
       <h3 style="text-align:center;color: crimson;">ADD YOUR DETAILS</h3><br>
       <img class="img-fluid rounded-circle center" src="{%static 'images/book_logo.jpg' %}" alt="img"  width="100" id="img1"><br><br>
-      <form action="details" method="post">
+      <form action="details" method="POST">
         {% csrf_token %}
         <div class="container">
-          <label for="uname"><b>Student Name</b></label>
-          <input type="text" placeholder="Enter Studentname" name="uname" required><br>
-          <label for="psw"><b>Roll Number</b></label>
-          <input type="password" placeholder="Enter Student Rollno" name="psw" required><br> 
-          <label for="uname"><b>Department</b></label>
-          <input type="text" placeholder="Enter Department" name="uname" required><br>
-          <label for="uname"><b>Phone Number</b></label>
-          <input type="text" placeholder="Enter Student Number" name="uname" required><br>   
-          <label for="uname"><b>uid</b></label>
-          <input type="text" placeholder="Enter uid" name="uname" required><br>   
+          <label for="Student_Name"><b>Student Name</b></label>
+          <input type="text" placeholder="Enter Studentname" name="Student_Name" required><br>
+          <label for="Roll_Number"><b>Roll Number</b></label>
+          <input type="text" placeholder="Enter Student Rollno" name="Roll_Number" required><br> 
+          <label for="Department"><b>Department</b></label>
+          <input type="text" placeholder="Enter Department" name="Department" required><br>
+          <label for="phone_number"><b>Phone Number</b></label>
+          <input type="text" placeholder="Enter Student Number" name="phone_number" required><br>      
           <button type="submit">Add Student</button>
         </div>
       </form>

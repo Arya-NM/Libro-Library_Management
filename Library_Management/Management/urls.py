@@ -10,8 +10,9 @@ urlpatterns = [
     path('accounts/login/',views.login_view, name='login'),
     path('accounts/signup/',views.signup, name='signup'),
 
-
-    path('accounts/stulogin/',views.stu_login, name='stu_login'),
+    path('accounts/stulogin/ip_data',views.ip_data),
+    path('accounts/stulogin/',views.loginpage,name='stu_login'),
+    
 
     path('accounts/stu_signup/',views.stu_signup, name='stu_signup'),
 
@@ -25,15 +26,18 @@ urlpatterns = [
 
     path('issuebook',views.issuebooks,name='issuebooks'),
     path('viewissuebook',views.viewissuebooks,name='viewissuebooks'),
-    path('delete/<int:id>/',views.deleteissue_data,name="deletedata"), 
+    path('deleteissue/<int:id>/',views.delete_issue,name="deleteissue"), 
     path('updateissuedata/<str:pk>/',views.updateissue_data,name="updateissuedata"),
 
     path('addstudent',views.addstudents,name='addstudents'),
     path('viewstudent',views.viewstudents,name='viewstudents'),
+    path('deletestu/<int:id>/',views.delete_stu,name="deletestu"), 
+    path('updatestudata/<str:pk>/',views.updatestu_data,name="updatestudata"),
+
     #path('editbook',views.editbooks,name='editbooks'),
 
     path('stuhomepage',views.stuhomepg,name='stuhomepg'),
-    path('stuviewissuebook',views.stuviewissuebooks,name='stuviewissuebooks'),
+    path('category',views.viewbookes,name='viewbookes'),
     path('fan1learnmore',views.fan1learnmores,name='fan1learnmores'),
     path('fantwolearnmore',views.fantwolearnmores,name='fantwolearnmores'),
     path('fanthreelearn',views.fanthreelearns,name='fanthreelearns'),
@@ -49,9 +53,10 @@ urlpatterns = [
     path('details',views.details,name='details'),
 
     path('edu&ref',views.edu_ref,name='edu_ref'),
-    
-    
-    
+    path('searchbook',views.searchbook,name="searchbook"),
+
+    #path('category',views.viewbookes,name='viewbookes'),
+   
    
       
 ]

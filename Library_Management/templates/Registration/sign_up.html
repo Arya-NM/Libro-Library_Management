@@ -13,7 +13,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!--browser tab icon-->
     <link rel = "icon" href ="{%static 'images/icon.jpg' %}" type = "image/x-icon">
-    <link rel= "stylesheet" type="text/css" href="signupstyle/signupstyle.css">
+    <!--<link rel= "stylesheet" type="text/css" href="signupstyle/signupstyle.css">-->
     <!--css connection-->
     <link rel= "stylesheet" href="{% static 'css/signupstyle.css' %}">
     <title>Libro - Library Management</title>
@@ -43,18 +43,20 @@
 <h2 id="heading" style="color: white;"><b>Libro</b></h2>
 
 <!--navbar-->
-  <ul style="color: aliceblue;">
-    <li><a  href="{% url 'home' %}"><b>Home</b></a></li>
-    <li><a href="{% url 'login' %}"><b>Signin</b></a></li>
-    <li><a href="#"><b>Signup</b></a></li>
-    <li><a href="{% url 'contact' %}"><b>Contact</b></a></li>
-  </ul>
+<ul style="color: aliceblue;">
+  <li><a  href="{% url 'home' %}"><b>Home</b></a></li>
+  <li><a href="{% url 'login' %}"><b>Librarian Signin</b></a></li>
+  <li><a href="{% url 'signup' %}"><b>Librarian Signup</b></a></li>
+  <li><a href="{% url 'stu_login' %}"><b>Student Signin</b></a></li>
+  <li><a href="{% url 'stu_signup' %}"><b>Student Signup</b></a></li>
+  <li><a href="{% url 'contact' %}"><b>Contact</b></a></li>
+</ul>
 <!--nav bar end-->
 
 <!--form start-->
 <div class="container">
 <div class=" col-12" style="background-color: rgb(247, 225, 232); margin-top: 20px; padding-top: 50px;" >
-<h1 style="color:crimson; font-size: 250%; text-align: center;">SIGN UP</h1>
+<h1 style="color:crimson; font-size: 250%; text-align: center;">LIBRARIAN SIGN UP</h1>
 <form action="\accounts\signup\" method="POST" style="border:1px solid #ccc">
   {% csrf_token %}
 

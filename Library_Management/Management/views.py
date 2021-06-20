@@ -110,7 +110,7 @@ def viewissuebooks(request):
 	return render(request,"viewissuebook.html",{'issuebooks':issuebooks})
 
 
-def deleteissue_data(request,id):
+def delete_issue(request,id):
 	if request.method =='POST':
 		pi=IssueBook.objects.get(pk=id)
 		pi.delete()
@@ -124,9 +124,7 @@ def updateissue_data(request,pk):
 			#if len(prod.imgs)>0:
 				#os.remove(prod.imgs.path)
 			#prod.imgs=request.FILES['imgs']
-		prod.Student_Name=request.POST['Student_Name']
-		prod.Book_Name=request.POST['Book_Name']
-		prod.isbn=request.POST['isbn']
+		#prod.isbn=request.POST['isbn']
 		prod.issue_date=request.POST['issue_date']
 		prod.return_date=request.POST['return_date']
 		prod.save()
@@ -135,37 +133,94 @@ def updateissue_data(request,pk):
 	return render(request,"editissuebook.html",context)
 
 
+def searchbook(request):
+	if request.method=="POST":
+		Category=request.POST['name1']
+		obj1=Book.objects.filter(Category=Category)
+		print(obj1)
+		return render(request,'category.html',{'books':obj1})	
+			
+	else:
+		obj2=Book.objects.all()
+		return render(request,"category.html",{'books':obj2})
+
+
+def viewbookes(request):
+	books=Book.objects.all()
+	return render(request,"category.html",{'books':books})
+
 
 def addstudents(request):
-
 	responseDic = {}
 	try:
-		Book_Name = request.POST['Book_Name']
-		Author_Name = request.POST['Author_Name']
-		ISBN = request.POST['isbn']
-		Status = request.POST['Status']
-		Category = request.POST['Category']
-
-		booklist = Book(Book_Name=Book_Name,Author_Name=Author_Name,isbn=ISBN,Status=Status,Category=Category)
-		booklist.save()
-		responseDic["msg1"]="book Added"
-		return render(request, "homepage.html", responseDic)
-
+		StudentName = request.POST['Student_Name']
+		Roll_Number = request.POST['Roll_Number']
+		Department = request.POST['Department']
+		phone_number = request.POST['phone_number']
+		
+		stulist = students(Student_Name=StudentName,Roll_Number=Roll_Number,Department=Department,phone_number=phone_number)
+		stulist.save()
+		responseDic["msg1"]="student Added"
+		return render(request, "homepage.html",responseDic)
 	except Exception as e:
 		 print(e)
-		 responseDic["msg1"]="book cannot be Added"
-		 return render(request, "addbook.html", responseDic)
+		 responseDic["msg1"]="student does't Added"
+		 return render(request, "addstudent.html",responseDic)
 	#return render(request,'addstudent.html')
 
 def viewstudents(request):
-	return render(request,'viewstudent.html')
+	stu=students.objects.all()
+	return render(request,"viewstudent.html",{'stu':stu})
+
+
+def delete_stu(request,id):
+	if request.method =='POST':
+		pi=students.objects.get(pk=id)
+		pi.delete()
+		return render(request,"homepage.html")
+
+def updatestu_data(request,pk):
+	prod=students.objects.get(id=pk)
+	if request.method=="POST":
+		#if len(request.FILES)!=0:
+			#if len(prod.imgs)>0:
+				#os.remove(prod.imgs.path)
+			#prod.imgs=request.FILES['imgs']
+		prod.StudentName=request.POST['Student_Name']
+		prod.Roll_Number=request.POST['Roll_Number']
+		prod.Department=request.POST['Department']
+		prod.phone_number=request.POST['phone_number']
+		prod.save()
+		return render(request,"homepage.html")		
+	context={'prod':prod}
+	return render(request,"editstu.html",context)
+
+
+
+
 
 #def editbooks(request):
 	#return render(request,'editbook.html')
 
 
 def details(request):
-	return render(request,'adddetails.html')
+	responseDic = {}
+	try:
+		StudentName = request.POST['Student_Name']
+		Roll_Number = request.POST['Roll_Number']
+		Department = request.POST['Department']
+		phone_number = request.POST['phone_number']
+		
+		stulist = students(Student_Name=StudentName,Roll_Number=Roll_Number,Department=Department,phone_number=phone_number)
+		stulist.save()
+		responseDic["msg1"]="student Added"
+		return render(request, "stuhomepage.html",responseDic)
+	except Exception as e:
+		 print(e)
+		 responseDic["msg1"]="student does't Added"
+		 return render(request, "adddetails.html",responseDic)
+	
+	#return render(request,'adddetails.html')
 
 
 def stuhomepg(request):
@@ -217,20 +272,21 @@ def edu_ref(request):
 	edubooks=IssueBook.objects.all()
 	return render(request,"edu&ref.html",{'edubooks':edubooks})
 	
+def loginpage(request):
+	return render(request,'Registration/stulogin.html')
 
-
-def stu_login(request):
+def ip_data(request):
 	responseDic={}
-	email = request.POST.get('email')
-	password = request.POST.get('password')
-	user = authenticate(request,email=email,password=password)
-	print(email,password)
+	first_name = request.POST.get('first_name')
+	password_1 = request.POST.get('password')
+	user = authenticate(request,first_name=first_name,password=password_1)
+
+	print(first_name,password_1,user)
 	if user is not None:
 		login(request,user)
-		print("user")
-		return redirect('stulogin.html')
+		return render(request,'stuhomepage.html')
 	else:
-		return render(request,'Registration/stulogin.html')
+		return render(request,'blank.html')
 
 
 
@@ -283,9 +339,7 @@ def login_view(request):
 		return redirect(request,'login.html')
 
 
-def logout_view(request):
-	logout(request)
-	return redirect('login')
+
 
 
 

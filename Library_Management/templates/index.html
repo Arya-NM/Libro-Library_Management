@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   {% load static %}
+
 <head>
   <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,20 +17,30 @@
     <link rel= "stylesheet" href="{% static 'css/style.css' %}">
     
 </head>
+<style>
+#drop{
+  position: absolute;
+  top: 10px;
+}
+body{background-color: aliceblue;}
+</style>
 <body>
-<h2 id="heading" style="color: white;"><b>Libro</b></h2>
+
 
 <!--navbar-->
   <ul style="color: aliceblue;">
     <li><a  href="{% url 'home' %}"><b>Home</b></a></li>
-    <li><a href="{% url 'login' %}"><b>Signin</b></a></li>
-    <li><a href="{% url 'signup' %}"><b>Signup</b></a></li>
+    <li><a href="{% url 'login' %}"><b>Librarian Signin</b></a></li>
+    <li><a href="{% url 'signup' %}"><b>Librarian Signup</b></a></li>
+    <li><a href="{% url 'stu_login' %}"><b>Student Signin</b></a></li>
+    <li><a href="{% url 'stu_signup' %}"><b>Student Signup</b></a></li>
     <li><a href="{% url 'contact' %}"><b>Contact</b></a></li>
   </ul>
+
 <!--nav bar end-->
 <!--jumbotron background-->
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
-  <!-- Carousel indicators -->
+   <!--Carousel indicators-->
   <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -59,13 +70,18 @@
 </div>
   <br>
   <br>
-  <br> 
+  <br>
 <!--carousel end--> 
+
+
+
 <li class="nav-item dropdown">
   <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown" style="color: black;">
    <b>Accounts</b> 
   </a>
   <div class="dropdown-menu">
+    <a class="dropdown-item" href="{% url 'signup' %}">Librarian Signup</a>
+    <a class="dropdown-item" href="{% url 'login' %}">Librarian Signin</a>
     <a class="dropdown-item" href="{% url 'stu_signup' %}"><b>Student Signup</b></a>
     <a class="dropdown-item" href="{% url 'stu_login' %}"><b>Student Login</b></a>
   </div>

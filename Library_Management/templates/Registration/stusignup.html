@@ -43,12 +43,14 @@
 <h2 id="heading" style="color: white;"><b>Libro</b></h2>
 
 <!--navbar-->
-  <ul style="color: aliceblue;">
-    <li><a  href="{% url 'home' %}"><b>Home</b></a></li>
-    <li><a href="{% url 'login' %}"><b>Signin</b></a></li>
-    <li><a href="#"><b>Signup</b></a></li>
-    <li><a href="{% url 'contact' %}"><b>Contact</b></a></li>
-  </ul>
+<ul style="color: aliceblue;">
+  <li><a  href="{% url 'home' %}"><b>Home</b></a></li>
+  <li><a href="{% url 'login' %}"><b>Librarian Signin</b></a></li>
+  <li><a href="{% url 'signup' %}"><b>Librarian Signup</b></a></li>
+  <li><a href="{% url 'stu_login' %}"><b>Student Signin</b></a></li>
+  <li><a href="{% url 'stu_signup' %}"><b>Student Signup</b></a></li>
+  <li><a href="{% url 'contact' %}"><b>Contact</b></a></li>
+</ul>
 <!--nav bar end-->
 
 <!--form start-->
